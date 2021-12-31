@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-openSans">
+    <!------- Navbar section ------>
+    <section class="bg-gray-50 shadow relative z-10">
+        <header class="container mx-auto md:px-9 py-1.5 px-3">
+            <nav class="flex items-center font-lato">
+                <a href="index.html" class="font-semibold font-lato text-lg mr-2 md:w-28 w-max lg:mr-4">Logo</a>
+                <div class="hidden lg:block">
+                    <ul class="flex space-x-6 items-center text-gray-600">
+                        <li class="hover:text-indigo-500 transition">
+                            <a href="index.html" class="text-sm">
+                                <i class="fas fa-home mr-1"></i>
+                                <span class="font-semibold">Home</span>
+                            </a>
+                        </li>
+                        <li class="hover:text-indigo-500 transition">
+                            <a href="#" class="text-sm">
+                                <i class="fas fa-paperclip mr-1"></i>
+                                <span class="font-semibold">About Us</span>
+                            </a>
+                        </li>
+                        <li class="hover:text-indigo-500 transition">
+                            <a href="#" class="text-sm">
+                                <i class="fas fa-blog mr-1"></i>
+                                <span class="font-semibold">Blog</span>
+                            </a>
+                        </li>
+                        <li class="hover:text-indigo-500 transition">
+                            <a href="#" class="text-sm">
+                                <i class="fas fa-contact-book mr-1"></i>
+                                <span class="font-semibold">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="lg:ml-auto ml-auto flex items-center space-x-4">
+                    <div class="relative hidden md:block">
+                        <i class="fas fa-search absolute top-2.5 left-[15px] text-xs text-gray-500 cursor-pointer"></i>
+                        <input type="text" placeholder="Search"
+                            class="w-full block bg-gray-200 border-0 pl-8 pr-4 py-1 focus:outline-none rounded-full placeholder-gray-400 placeholder-font-size tracking-wide">
+                    </div>
+                    <div class="text-gray-500">
+                        <a href="#" class="hover:text-indigo-500 transition text-sm">
+                            <i class="far fa-user mr-1"></i>
+                            <span class="font-semibold">Login/Register</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-lg w-max ml-4 block lg:hidden" id="toggleBar">
+                    <i class="fas fa-bars cursor-pointer"></i>
+                </div>
+            </nav>
+        </header>
+    </section>
+    <!----- Navbar section End------>
+
+    <!----- Navbar and category in small device  ------>
+    <nav class="font-lato w-full h-full fixed bg-black z-10 left-0 top-0 lg:hidden bg-opacity-25 opacity-0 invisible transition duration-500 delay-100"
+        id="sidebarWrap">
+        <div class="fixed -left-full z-20 w-full sm:max-w-1/4 h-auto bg-white shadow-lg flex flex-col px-4 py-4 transition duration-1000 ease-in-out"
+            id="sidebar">
+            <div class="w-max absolute top-0 sm:top-4 sm:right-4 right-2 text-red-600 text-lg cursor-pointer"
+                id="closeSideBar">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <i class="fas fa-search absolute top-2.5 left-[15px] text-xs text-gray-500 cursor-pointer"></i>
+                    <input type="text" placeholder="Search"
+                        class="w-full block bg-gray-200 border-0 pl-8 pr-4 py-1 focus:outline-none rounded-full placeholder-gray-400 placeholder-font-size tracking-wide">
+                </div>
+            </div>
+            <h2 class="font-semibold font-lato text-md mr-6 text-gray-400 mb-4">Menu</h2>
+            <div>
+                <ul class="flex flex-col space-y-2 text-gray-600">
+                    <li class="hover:text-indigo-500 transition">
+                        <a href="index.html" class="text-sm">
+                            <i class="fas fa-home mr-1"></i>
+                            <span class="font-semibold">Home</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-indigo-500 transition">
+                        <a href="#" class="text-sm">
+                            <i class="fas fa-paperclip mr-1"></i>
+                            <span class="font-semibold">About Us</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-indigo-500 transition">
+                        <a href="#" class="text-sm">
+                            <i class="fas fa-blog mr-1"></i>
+                            <span class="font-semibold">Blog</span>
+                        </a>
+                    </li>
+                    <li class="hover:text-indigo-500 transition">
+                        <a href="#" class="text-sm">
+                            <i class="fas fa-contact-book mr-1"></i>
+                            <span class="font-semibold">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- category -->
+            <div class="mt-6">
+                <h2 class="text-md text-gray-400 mb-4 font-semibold">Categories</h2>
+                <ul>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Business</span>
+                            </div>
+                            <span class="ml-auto">(7)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Sports</span>
+                            </div>
+                            <span class="ml-auto">(5)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Music</span>
+                            </div>
+                            <span class="ml-auto">(6)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Fashion</span>
+                            </div>
+                            <span class="ml-auto">(2)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Nature</span>
+                            </div>
+                            <span class="ml-auto">(5)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Food</span>
+                            </div>
+                            <span class="ml-auto">(10)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>People</span>
+                            </div>
+                            <span class="ml-auto">(12)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- category end-->
+        </div>
+    </nav>
+
+    <!----- Main section------>
+    <div
+        class="container space-x-1 mx-auto px-2 md:px-6 py-4 flex flex-wrap md:flex-col lg:flex-row lg:flex-nowrap shadow-sm">
+        <!-----------------------left sidebar------------------->
+        <div class="w-3/12 hidden lg:block">
+            <!-- category -->
+            <div class="bg-white px-2 py-6 rounded-sm font-openSans font-semibold">
+                <h2 class="text-md text-gray-900 mb-4 font-semibold">Categories</h2>
+                <ul>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Business</span>
+                            </div>
+                            <span class="ml-auto">(7)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Sports</span>
+                            </div>
+                            <span class="ml-auto">(5)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Music</span>
+                            </div>
+                            <span class="ml-auto">(6)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Fashion</span>
+                            </div>
+                            <span class="ml-auto">(2)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Nature</span>
+                            </div>
+                            <span class="ml-auto">(5)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>Food</span>
+                            </div>
+                            <span class="ml-auto">(10)</span>
+                        </a>
+                    </li>
+                    <li class="w-full group my-2">
+                        <a href="#" class="w-full flex items-center text-xs text-gray-600">
+                            <div class="group-hover:underline w-max">
+                                <i class="far fa-folder-open mr-1 text-xs"></i>
+                                <span>People</span>
+                            </div>
+                            <span class="ml-auto">(12)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- category end-->
+
+            <!-- random post-->
+            <div class="bg-white px-2 py-6 rounded-sm my-6 font-openSans font-semibold">
+                <h2 class="text-md text-gray-900 mb-4 font-semibold">Random Posts</h2>
+                <div class="flex flex-col">
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/featured_img1.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-0.5 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Mar 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/featured_img2.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Apr 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/featured_img3.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Aug 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- random post end-->
+        </div>
+        <!-----left sidebar end------>
+
+        <!---------------single post section--------------->
+        <div class="lg:w-6/12 md:w-12/12 rounded-sm">
+            <div class="bg-white flex justify-between items-center px-2 py-2">
+                <h2 class="uppercase text-gray-600 text-sm font-semibold">BUSINESS</h2>
+                <a href="#"
+                    class="uppercase text-gray-100 bg-blue-500 px-3 py-1 rounded-sm hover:bg-blue-400 transition">
+                    <span class="text-xs">SEE MORE</span>
+                </a>
+            </div>
+            <!-- single post -->
+            <div class="bg-white my-2 px-2">
+                <img src="./images/single_post_img.jpg" alt="Post one" class="w-max block rounded-sm object-cover">
+                <div class=pt-2 pb-4">
+                    <h2 class="font-semibold text-md text-gray-600">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. facere des per Exercitationem
+                        quis in expedita.
+                    </h2>
+                    <div class="flex space-x-2 text-gray-400 font-lato text-xs mt-2">
+                        <span><i class="far fa-user mr-1"></i>Saikot Khan</span>
+                        <span><i class="far fa-clock mr-1"></i>Jan 10, 2021</span>
+                    </div>
+                </div>
+                <div class="my-2 font-openSans">
+                    <p class="text-gray-400 text-xs font-normal leading-normal">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing
+                        elit. Rem ut ipsam dolores eaque, voluptatibus corporis fugiat, labore sapiente ratione soluta
+                        excepturi quidem delectus facilis aperiam quos voluptas nobis cupiditate ducimus.
+                    </p>
+                    <p class="bg-green-50 my-4 text-gray-500 font-normal text-sm border px-2 py-4"><i
+                            class="fas fa-quote-left-alt text-lg font-bold text-gray-400"></i>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora deleniti vel praesentium
+                        rerum, delectus ad. Corrupti, inventore voluptas molestias ducimus cum quibusdam fugit eveniet
+                        maiores recusandae excepturi quaerat aliquam rem.
+                        <i class="fas fa-quote-right-alt text-lg font-bold text-gray-400"></i>
+                    </p>
+                    <p class="text-gray-400 font-normal text-xs pb-4 leading-normal">Lorem ipsum dolor sit amet,
+                        consectetur
+                        adipisicing
+                        elit. Veritatis laborum mollitia non
+                        possimus? Animi dicta, suscipit dolorum ad minus tempora asperiores natus eos, quas nisi unde,
+                        vero soluta ea. Exercitationem illum sed culpa consequatur natus? Sequi, laboriosam! Ipsam,
+                        recusandae fuga.
+                    </p>
+                </div>
+                <!-- tags -->
+                <div class="flex space-x-1 flex-wrap text-xs text-gray-500 mb-2">
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Business</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Food</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Sports</a>
+                </div>
+                <hr>
+                <!-- social links-->
+                <div class="flex space-x-1 py-4">
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-facebook-f scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-twitter scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-instagram scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-whatsapp scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-linkedin-in scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- related post -->
+            <div class="bg-white flex justify-between items-center px-2 py-2">
+                <h2 class="uppercase text-gray-600 text-sm font-semibold">Relared Post</h2>
+                <a href="#"
+                    class="uppercase text-gray-100 bg-blue-500 px-3 py-1 rounded-sm hover:bg-blue-400 transition">
+                    <span class="text-xs">SEE MORE</span>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap md:flex-nowrap space-x-2 font-openSans">
+                <div class="my-2 group">
+                    <a href="#">
+                        <img src="./images/featured_img1.jpg" alt="post" class="w-full h-auto rounded-sm object-cover">
+                        <div class="mt-1">
+                            <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                ipsum dolor sit
+                                amet
+                                consectetur
+                                .</h3>
+                            <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                            <span class="text-gray-400 text-xs font-normal">Sunday 25, 2021</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="my-2 group">
+                    <a href="#">
+                        <img src="./images/featured_img2.jpg" alt="post" class="w-full h-auto rounded-sm object-cover">
+                        <div class="mt-1">
+                            <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                ipsum dolor sit
+                                amet
+                                consectetur
+                                .</h3>
+                            <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                            <span class="text-gray-400 text-xs font-normal">Sunday 25, 2021</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="my-2 group">
+                    <a href="#">
+                        <img src="./images/featured_img3.jpg" alt="post" class="w-full h-auto rounded-sm object-cover">
+                        <div class="mt-1">
+                            <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                ipsum dolor sit
+                                amet
+                                consectetur
+                                .</h3>
+                            <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                            <span class="text-gray-400 text-xs font-normal">Sunday 25, 2021</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--post Comments -->
+            <div class="bg-white my-4 font-openSans px-2 py-4">
+                <div class="flex justify-between">
+                    <h2 class="text-gray-600 text-sm font-semibold">Post a Comment</h2>
+                    <p class="text-gray-500 text-sm">12 Comments</p>
+                </div>
+                <a href="#" class="text-gray-800 text-sm font-semibold my-4 block hover:underline w-max">View More
+                    Comments</a>
+                <!-- comment -->
+                <div class="py-2">
+                    <div class="flex space-x-4 pb-3">
+                        <img src="./images/client02.jpg" alt="Comment" class="w-12 h-12 rounded-full">
+                        <div class="font-openSans text-sm">
+                            <h4 class="font-semibold hover:underline">
+                                <a href="#">Saikot khan</a>
+                            </h4>
+                            <span class="mb-1 text-gray-400 text-xs">12 Jan 2021 on 04:35pm</span>
+                            <p class="font-semibold text-gray-800 text-md my-2">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit.</p>
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="text-gray-500 text-xs font-semibold border rounded-full px-2 py-1 hover:bg-gray-100">Reply</a>
+                                <a href="#"
+                                    class="text-gray-500 text-xs font-semibold border rounded-full px-2 py-1 hover:bg-gray-10">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="py-2">
+                    <div class="flex space-x-4">
+                        <img src="./images/client-3.png" alt="Comment" class="w-12 h-12 rounded-full">
+                        <div class="font-openSans text-sm">
+                            <h4 class="font-semibold hover:underline">
+                                <a href="#">Jesika Linda</a>
+                            </h4>
+                            <span class="mb-1 text-gray-400 text-xs">12 Jan 2021 on 04:35pm</span>
+                            <p class="font-semibold text-gray-800 text-md my-2">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit.</p>
+                            <div class="flex space-x-2">
+                                <a href="#"
+                                    class="text-gray-500 text-xs font-semibold border rounded-full px-2 py-1 hover:bg-gray-10">Reply</a>
+                                <a href="#"
+                                    class="text-gray-500 text-xs font-semibold border rounded-full px-2 py-1 hover:bg-gray-10">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- write comment-->
+                <div class="my-5">
+                    <h2 class="text-gray-500 text-sm font-semibold">Write Comment</h2>
+                    <form class="my-2">
+                        <textarea rows="4" placeholder="Write Comment"
+                            class="w-full block focus:border-green-500 outline-none placeholder-font-size border border-gray-300 mb-4 px-2 py-2"></textarea>
+                        <button
+                            class="bg-green-600 text-green-100 text-xs rounded-sm px-4 py-2 hover:bg-green-500">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!---------------single post section end--------------->
+
+        <!-------------------------right sidebar------------------------>
+        <div class="lg:w-3/12 md:w-12/12 rounded-sm">
+            <!-- social links-->
+            <div class="bg-white px-2 py-6 rounded-sm">
+                <h2 class="text-md text-gray-900 mb-4 font-semibold">Social Links</h2>
+                <div class="flex space-x-1">
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-facebook-f scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-twitter scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-instagram scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-whatsapp scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                    <a href="#" class="border border-gray-300 w-7 transform text-center group">
+                        <i
+                            class="fab fa-linkedin-in scale-75 border-gray-500 transition duration-500 group-hover:scale-100"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- social links end-->
+
+            <!-- popular post-->
+            <div class="bg-white px-2 py-6 rounded-sm my-18 font-openSans font-semibold my-6">
+                <h2 class="text-md text-gray-900 mb-4 font-semibold">Random Posts</h2>
+                <div class="flex flex-col">
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/slider_img1.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Jan 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/slider_img2.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-1 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Mar 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-2 group">
+                        <a href="#" class="flex space-x-2">
+                            <img src="./images/slider_img3.jpg" alt="post" class="w-16 h-14 rounded-sm object-cover">
+                            <div>
+                                <h3 class="font-semibold text-xs leading-snug text-gray-700 group-hover:underline">Lorem
+                                    ipsum dolor sit
+                                    amet
+                                    consectetur
+                                    .</h3>
+                                <i class="far fa-clock mr-0.5 text-gray-400 text-xs"></i>
+                                <span class="text-gray-400 text-xs font-normal">Jun 25, 2021</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- popular post end-->
+
+            <!-- tags links-->
+            <div class="bg-white px-2 py-6 rounded-sm">
+                <h2 class="text-md text-gray-900 mb-4 font-semibold">Tags</h2>
+                <div class="flex space-x-1 flex-wrap text-xs text-gray-500">
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Business</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Food</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Sports</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Beauty</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Travel</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Tech</a>
+                    <a href="#" class="border p-2 mb-2 hover:bg-gray-100">Coding</a>
+                </div>
+                <!-- tags links end-->
+            </div>
+            <!-----right sidebar end------>
+        </div>
+    </div>
+    <!----- Main section End------>
+
+    <!-- footer -->
+    <foote>
+        <p class="my-4 text-gray-500 text-xs font-openSans font-medium text-center block">&copy; Copyright 2021. All
+            Right
+            Reserved</p>
+    </foote>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
